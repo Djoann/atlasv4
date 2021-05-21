@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>The Atlas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- Mapbox Assembly -->
+  <link href="./vendor/assembly.min.css" rel="stylesheet">
+  <script async defer src="./vendor/assembly.js"></script>
+  <!-- Mapbox Assembly Add-On -->
+  <link href="./vendor/assemblyAO.min.css" rel="stylesheet">
+  <script src="./vendor/assemblyAO.js"></script>
+  <!-- Custom styles -->
+  <link href="main.css" rel="stylesheet" type="text/css" />
+
+  <!-- Sociala -->
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/feather.css" type="text/css" media="all">
+  <style type="text/css">
+    
+    .hide {
+      display: none;
+    }
+
+    .navigation {
+      position: absolute !important;
+      left: 0px !important;
+      height: 100% !important;
+      /*margin-top: 40% !important;*/
+      margin-left: 2%;
+    }
+
+    .w325 {
+      height: 90% !important;
+    }
+
+    .container-div {
+      height: 100% !important;
+    }
+
+    .mapboxgl-ctrl-geocoder {
+      width: 100% !important;
+      max-width: 660px !important;
+      line-height: 40px !important;
+    }
+
+    .mapboxgl-ctrl-top-right {
+      width: 30%;
+    }
+
+    .bg-primary-gradiant {
+      background: #1a50bd;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="absolute top right left bottom">
+    <div id="map" class="absolute top left right bottom"></div>
+    <div id="annotation_banner" class="banner hide">
+      Annotation Mode
+    </div>
+  </div>
+  <div class="container-div">
+    <div id="info_panel" class="w325 side-panel">
+              <!-- navigation left -->
+        <nav class="navigation scroll-bar">
+            <div class="container ps-0 pe-0">
+                <div class="nav-content">
+                    <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
+                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span>Menu</span></div>
+                        <ul class="mb-1 top-content">
+                            <li class="logo d-none d-xl-block d-lg-block"></li>
+                          <!--   <li><a href="default.html" class="nav-content-bttn open-font" ><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Newsfeed</span></a></li> -->
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font" ><i class="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Solutions</span></a></li>
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font" ><i class="feather-award btn-round-md bg-red-gradiant me-3"></i><span>Contributors</span></a></li>
+                            <!-- <li><a href="default-storie.html" class="nav-content-bttn open-font" ><i class="feather-globe btn-round-md bg-gold-gradiant me-3"></i><span>The Atlas</span></a></li> -->
+                            
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font"><i class="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>My Profile </span></a></li>       
+
+                        </ul>
+                    </div>
+
+                    <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2">
+                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span>More </span>Pages</div>
+                        <ul class="mb-3">
+                            <!-- <li><a href="default-email-box.html" class="nav-content-bttn open-font"><i class="font-xl text-current feather-inbox me-3"></i><span>Email Box</span><span class="circle-count bg-warning mt-1">584</span></a></li> -->
+                            <!-- <li><a href="default-hotel.html" class="nav-content-bttn open-font"><i class="font-xl text-current feather-home me-3"></i><span>Near Hotel</span></a></li> -->
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font"><i class="font-xl text-current feather-map-pin me-3"></i><span>Latest Event</span></a></li>
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font"><i class="font-xl text-current feather-youtube me-3"></i><span>Media</span></a></li>                        
+                        </ul>
+                    </div>
+                    <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1">
+                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span></span> Account</div>
+                        <ul class="mb-1">
+                            <li class="logo d-none d-xl-block d-lg-block"></li>
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-settings me-3 text-grey-500"></i><span>Settings</span></a></li>
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-pie-chart me-3 text-grey-500"></i><span>Analytics</span></a></li>
+                            <li><a href="javascript:void(0);" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-message-square me-3 text-grey-500"></i><span>Chat</span><span class="circle-count bg-warning mt-0">23</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      <div class="p12 scroll-auto">
+        
+            <div class="nav-top">
+                <a href="index.html"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">The Atlas. </span> </a>
+              
+                <button class="nav-menu me-0 ms-2"></button>
+            </div>
+        
+      </div>
+      <div id="basemap-toggle" class="hide p12 flex-parent w325">
+        <button id="mapbox/streets" class="hidebtn btn--pill btn--pill-stroke btn--red btn--pill-hl txt-s flex-child--grow">Streets</button>
+        <button id="mapbox/light" class="btn btn--stroke btn--pill-stroke btn--red btn--pill-hc txt-s flex-child--grow">Light</button>
+        <button id="mapbox/dark" class="btn btn--stroke btn--pill-stroke btn--red btn--pill-hc txt-s flex-child--grow">Dark</button>
+        <button id="mapbox/satellite-streets" class="btn btn--stroke btn--pill-stroke btn--red btn--pill-hr txt-s flex-child--grow">Satellite</button>
+      </div>
+
+
+      <!-- ANNOTATION  -->
+      <div class="hide p12 flex-parent w325">
+        <button id="annotation_toggle" class="btn btn--stroke btn--pill-stroke btn--red txt-s flex-child--grow">Turn Annotation Mode <span id="annotation_onoff">On</span></button>
+      </div>
+
+      <div class="hide p12 scroll-auto">
+        <h3 class="txt-m txt-bold mb6">Add Layers</h3>
+        <div id="dnd_area" class="area txt-s">Drag and drop files onto the map to add them <br /> (.shp, .csv, .kml, or .geojson)</div>
+        <div id="layers_added" class="layers_added hide">
+          <p class="txt-bold mt24">Layers</p>
+          <ul id="layer_list" class="layer_list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-div-right">
+    <div id="annotation_panel" class="hide w325 side-panel annotation-panel annotation-panel-flex">
+      <div class="w325 bg-white round-ml scroll-auto">
+        <h3 class="p12 txt-m txt-bold mb6">Annotation Information</h3>
+      </div>
+      <div class="p12 pt0 fields">
+        <div class="txt-bold">Unique ID:</div>
+        <input disabled id="annotation_id" class="input" placeholder="UID" />
+        <div class="txt-bold">Name:</div>
+        <input id="annotation_name" class="input" placeholder="Name of annotation" />
+        <div class="txt-bold">Description:</div>
+        <textarea id="annotation_desc" class="textarea" placeholder="Description of annotation"></textarea>
+        <div class="txt-bold">Notes:</div>
+        <textarea id="annotation_notes" class="textarea" placeholder="Notes about the annotation"></textarea>
+      </div>
+      <div class="save-area p12 flex-parent">
+        <button id="annotation_save" class="btn btn--stroke">Save</button>
+        <span id="annotation_spinner" class="loading .loading--s status hide"></span>
+      </div>
+    </div>
+  </div>
+  <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>
